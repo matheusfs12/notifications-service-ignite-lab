@@ -8,10 +8,11 @@ import { UnreadNotification } from '@application/use-cases/unread-notification';
 
 import { DatabaseModule } from '../database/database.module';
 import { NotificationsController } from './controllers/notifications.controller';
+import { NotificationsRecipientController } from './controllers/notifications.recipient.controller';
 
 @Module({
     imports: [DatabaseModule],
-    controllers: [NotificationsController],
+    controllers: [NotificationsController, NotificationsRecipientController],
     providers: [SendNotification, CancelNotification, ReadNotification, UnreadNotification, CountRecipientNotifications, GetRecipientNotifications]
 })
 export class HttpModule {}
